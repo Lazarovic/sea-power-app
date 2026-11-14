@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sea Power — Unit Database</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>⚓ Sea Power <span>Unit Database</span></h1>
+  <p id="stats">A carregar…</p>
+</header>
+<nav id="tabs"></nav>
+<section id="controls">
+  <input type="search" id="search" placeholder="Pesquisar por nome ou ID…">
+  <select id="filter1"></select>
+  <select id="filter2"></select>
+  <select id="sourceFilter">
+    <option value="">Todas as fontes</option>
+    <option value="Base Game">Base Game</option>
+    <option value="Mod">Mods</option>
+  </select>
+  <span id="count"></span>
+</section>
+<main>
+  <table id="table">
+    <thead></thead>
+    <tbody></tbody>
+  </table>
+  <div id="empty" hidden>Sem resultados.</div>
+  <div id="pager">
+    <button id="prev">‹ Anterior</button>
+    <span id="pageInfo"></span>
+    <button id="next">Seguinte ›</button>
+  </div>
+</main>
+<div id="modal" hidden>
+  <div id="modalCard"></div>
+</div>
+<footer>Dados: Sea Power (base game + 80 mods do Steam Workshop) · App gerada a partir de <code>sea-power-unit-database.xlsx</code></footer>
+<script src="app.js"></script>
+</body>
+</html>

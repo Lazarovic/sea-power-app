@@ -1,0 +1,155 @@
+:root {
+  --bg: #0b1420;
+  --panel: #101d2e;
+  --panel2: #16273d;
+  --text: #dbe7f3;
+  --muted: #7f95ab;
+  --accent: #3fa7d6;
+  --border: #23384f;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+header {
+  padding: 1.2rem 1.5rem 0.8rem;
+  background: linear-gradient(180deg, #0e1c2e, var(--bg));
+  border-bottom: 1px solid var(--border);
+}
+header h1 { margin: 0; font-size: 1.6rem; letter-spacing: 0.5px; }
+header h1 span { color: var(--accent); font-weight: 300; }
+header p { margin: 0.3rem 0 0; color: var(--muted); font-size: 0.85rem; }
+
+nav {
+  display: flex;
+  gap: 0.4rem;
+  padding: 0.8rem 1.5rem 0;
+  flex-wrap: wrap;
+}
+nav button {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-bottom: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+nav button.active { background: var(--panel2); color: var(--accent); font-weight: 600; }
+nav button small { color: var(--muted); margin-left: 0.4rem; }
+
+#controls {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.8rem 1.5rem;
+  background: var(--panel2);
+  border-top: 1px solid var(--border);
+}
+#controls input, #controls select {
+  background: var(--panel);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.9rem;
+}
+#controls input { flex: 1; min-width: 220px; }
+#count { color: var(--muted); font-size: 0.85rem; margin-left: auto; }
+
+main { padding: 0 1.5rem 1.5rem; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+}
+thead th {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  background: var(--panel2);
+  color: var(--accent);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+thead th.numeric, td.numeric { text-align: right; }
+tbody td {
+  padding: 0.5rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+tbody tr:hover { background: var(--panel2); cursor: pointer; }
+tbody td.muted { color: var(--muted); }
+
+#empty { padding: 2rem; text-align: center; color: var(--muted); }
+#pager {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+#pager button {
+  background: var(--panel2);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+}
+#pager button:disabled { opacity: 0.4; cursor: default; }
+#pageInfo { color: var(--muted); font-size: 0.85rem; }
+
+#modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 10, 18, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 10;
+}
+#modalCard {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.4rem 1.6rem;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  overflow: auto;
+}
+#modalCard h2 { margin: 0 0 0.2rem; color: var(--accent); }
+#modalCard .id { color: var(--muted); font-family: monospace; font-size: 0.8rem; margin-bottom: 1rem; }
+#modalCard dl { display: grid; grid-template-columns: auto 1fr; gap: 0.4rem 1.2rem; margin: 0; }
+#modalCard dt { color: var(--muted); }
+#modalCard dd { margin: 0; word-break: break-word; }
+#modalCard .close {
+  float: right;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+footer {
+  padding: 1rem 1.5rem 2rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+}
